@@ -1,0 +1,2 @@
+class Skateshop < ApplicationRecord
+end
