@@ -5,10 +5,11 @@ class SkateshopsController < ApplicationController
     @skateshops = Skateshop.all
 
     # the `geocoded` scope filters only flats with coordinates (latitude & longitude)
-    @markers = @skateshops.geocoded.map do |flat|
+    @markers = @skateshops.geocoded.map do |skateshop|
       {
-        lat: flat.latitude,
-        lng: flat.longitude
+        lat: skateshop.latitude,
+        lng: skateshop.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { skateshop: skateshop })
       }
     end
   end
