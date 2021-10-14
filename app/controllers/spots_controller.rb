@@ -3,6 +3,7 @@ class SpotsController < ApplicationController
 
   def index
     @spots = Spot.all
+    # @spot = Spot.find(params[:id])
 
     # the `geocoded` scope filters only flats with coordinates (latitude & longitude)
     @markers = @spots.geocoded.map do |spot|
