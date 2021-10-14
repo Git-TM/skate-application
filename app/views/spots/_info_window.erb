@@ -1,2 +1,6 @@
-<h2><%= spot.name %></h2>
-<p><%= spot.address %></p>
+<%= link_to spots_path(spot_id: spot.id), class: "bouton-home" do %>
+  <div>
+    <h2><%= spot.name %></h2>
+    <p><%= spot.address %></p>
+  </div>
+<% end %>
