@@ -1,7 +1,9 @@
-<%= form_for(@spot) do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.label :address %>
-  <%= f.text_field :address %>
-  <%= f.submit %>
-<% end %>
+<div class="container pt-4">
+  <%= simple_form_for @spot do |f| %>
+  <%= f.input :name %>
+  <%= f.input :address%>
+  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+  <%= f.submit "Submit Spot", class: "btn btn-dark" %>
+  <% end %>
+</div>
+<br><br><br><br><br><br>
