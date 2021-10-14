@@ -1,6 +1,7 @@
 require "open-uri"
 
 puts "Deleting all"
+Videotrick.delete_all
 Skateshop.delete_all
 Spot.delete_all
 User.delete_all
@@ -42,3 +43,10 @@ skateshop1 = Skateshop.create(name: "Nozbone", address: "7 Rue de Marseille, 750
 skateshop1.save!
 skateshop2 = Skateshop.create(name: "Snowbeach", address: "30 Bd Richard-Lenoir, 75011 Paris")
 skateshop2.save!
+
+
+# Creatin first videotricks
+videotricks3 = Videotrick.create(content: "what a nice trick", user_id: user3.id, spot_id: spot2.id)
+videotricksvideo3 = URI.open("https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4")
+videotricks3.video.attach(io: videotricksvideo3, filename: "charonne", content_type: 'video/mp4')
+videotricks3.save!
