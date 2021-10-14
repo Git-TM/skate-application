@@ -1,0 +1,8 @@
+<div class="container">
+  <% @videotricks.each do |videotrick| %>
+    <%= videotrick.content %>
+    <video id="video" width="200px" height="200px" autoplay muted loop>
+      <source type="video/mp4" src=<%=cl_video_tag(videotrick.video.key)%> >
+    </video>
+  <% end %>
+</div>
