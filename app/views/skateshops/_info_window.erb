@@ -1,2 +1,6 @@
-<h2><%= skateshop.name %></h2>
-<p><%= skateshop.address %></p>
+<%= link_to skateshops_path(skateshop_id: skateshop.id), class: "bouton-home"  do %>
+  <div>
+    <h2><%= skateshop.name %></h2>
+    <p><%= skateshop.address %></p>
+  </div>
+<% end %>
