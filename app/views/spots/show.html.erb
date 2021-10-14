@@ -1,0 +1,53 @@
+<div class="container">
+  <div class="spot-presentation">
+    <div class="photo-spots-container">
+      <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+          <% if @spot.photos.attached? %>
+            <div class="carousel-item active">
+              <%= image_tag(@spot.photos.first, class: "photo-spot d-block w-100") %>
+            </div>
+            <% @spot.photos.all[1..-1].each do |illustration| %>
+              <div class="carousel-item">
+                <%= image_tag(illustration, class: "photo-spot d-block w-100") %>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
+    <div class="spot-description">
+      <h2><%= @spot.name %></h2>
+      <p> Flat Score : <%= @spot.score_flat%>/ 5</p>
+      <p> Popularity Score : <%= @spot.score_popularity%>/ 5</p>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="videotricks-container">
+  <h2>All the tricks made at <%= @spot.name %></h2>
+    <% @videotricks.each do |videotrick| %>
+      <%= videotrick.content %>
+      <%= cl_video_tag (videotrick.video.key), id: "videotricks", width: "200px", height: "200px", controls: false, autoplay:true, loop:true, muted:true %>
+    <% end %>
+  </div>
+  <%= simple_form_for([@spot, @newvideotrick]) do |f| %>
+    <%= f.input :content, as: :text %>
+    <%= f.input :video, as: :file, input_html: { data: { direct_upload_url: '/rails/active_storage/direct_uploads' } } %>
+    <%= f.button :submit %>
+  <% end %>
+</div>

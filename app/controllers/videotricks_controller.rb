@@ -9,13 +9,31 @@ class VideotricksController < ApplicationController
   end
 
   def create
-    @videotrick = Videotrick.new(params[:videotrick])
-    @videotrick.save
+    # @videotrick = Videotrick.new(params[:videotrick_id])
+    @spot = Spot.find(params[:spot_id])
+    @newvideotrick.spot = @spot
+    @newvideotrick.save
+    if @newvideotrick.save
+      redirect_to spot_path(@spot)
+    else
+      render 'spots/show'
+    end
   end
+
+  # def create
+  #   @spot = Spot.find(params[:spot_id])
+  #   @review = Review.new(review_params)
+  #   @review.spot = @spot
+  #   if @review.save
+  #     redirect_to spot_path(@spot)
+  #   else
+  #     render 'spots/show'
+  #   end
+  # end
 
   private
 
   def videotrick_params
-    params.require(:videotrick).permit(:content)
+    params.require(:videotrick).permit(:content, :video)
   end
 end
