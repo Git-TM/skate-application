@@ -14,4 +14,21 @@ class SpotsController < ApplicationController
       }
     end
   end
+
+  def new
+    @spot = Spot.new
+  end
+
+  def create
+    @spot = Spot.new(spot_params)
+    @spot.save
+
+    redirect_to spots_path
+  end
+
+  private
+
+  def spot_params
+    params.require(:spot).permit(:name, :address)
+  end
 end
