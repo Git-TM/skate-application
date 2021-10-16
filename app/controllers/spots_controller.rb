@@ -3,6 +3,7 @@ class SpotsController < ApplicationController
 
   def index
     @spots = Spot.all
+    # @spot = Spot.find(params[:id])
 
     # the `geocoded` scope filters only flats with coordinates (latitude & longitude)
     @markers = @spots.geocoded.map do |spot|
@@ -40,4 +41,20 @@ class SpotsController < ApplicationController
   #   end
   # end
 
+  def new
+    @spot = Spot.new
+  end
+
+  def create
+    @spot = Spot.new(spot_params)
+    @spot.save
+
+    redirect_to spots_path
+  end
+
+  private
+
+  def spot_params
+    params.require(:spot).permit(:name, :address, :photo)
+  end
 end

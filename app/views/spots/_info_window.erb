@@ -1,2 +1,11 @@
-<h2><%= spot.name %></h2>
-<p><%= spot.address %></p>
+<%= link_to spots_path(spot_id: spot.id), class: "bouton-home" do %>
+  <div>
+    <h4><%= spot.name %></h4>
+    <p><%= spot.address %> </p>
+    <% if spot.photos.attached? %>
+      <% spot.photos.each do |illustration| %>
+          <%= image_tag(illustration, class: 'photo-info') %>
+      <% end %>
+     <% end %>
+  </div>
+<% end %>
