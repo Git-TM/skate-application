@@ -39,9 +39,5 @@
       <%= cl_video_tag (videotrick.video.key), id: "videotricks", width: "200px", height: "200px", controls: false, autoplay:true, loop:true, muted:true %>
     <% end %>
   </div>
-  <%= simple_form_for([@spot, @videotrick], remote: true) do |f| %>
-    <%= f.input :content %>
-    <%= f.input :video, as: :file %>
-    <%= f.button :submit %>
-  <% end %>
+  <%= render "videotricks/form" %>
 </div>

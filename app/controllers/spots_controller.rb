@@ -31,20 +31,6 @@ class SpotsController < ApplicationController
     redirect_to spots_path
   end
 
-  #   def create
-  #   # @videotrick = Videotrick.new(params[:videotrick_id])
-
-  #   @spot = Spot.find(params[:spot_id])
-  #   @newvideotrick = Videotrick.new(videotrick_params)
-  #   @newvideotrick.spot = @spot
-  #   @newvideotrick.save
-  #   if @newvideotrick.save
-  #     redirect_to spot_path(@spot)
-  #   else
-  #     render 'spots/show'
-  #   end
-  # end
-
   private
 
   def spot_params

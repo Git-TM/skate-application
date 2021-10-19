@@ -1,0 +1,8 @@
+  <%= simple_form_for([@spot, @videotrick]) do |f| %>
+    <%= f.input :content %>
+    <%# <%= f.input :video, as: file%>
+    <%= f.file_field :video, accept: "video/*" %>
+    <%# , direct_upload: true %>
+    <%# <%= f.button :submit %>
+    <%= f.submit 'Upload'%>
+  <% end %>
