@@ -39,9 +39,9 @@ spot3.photos.attach(io: file3, filename: "charonne", content_type: 'image/jpg')
 spot3.save!
 
 # Creating 1st skateshop
-skateshop1 = Skateshop.create(name: "Nozbone", address: "7 Rue de Marseille, 75010 Paris")
+skateshop1 = Skateshop.create(name: "Nozbone", address: "7 Rue de Marseille, 75010 Paris", url: "https://www.nozbone.com")
 skateshop1.save!
-skateshop2 = Skateshop.create(name: "Snowbeach", address: "30 Bd Richard-Lenoir, 75011 Paris")
+skateshop2 = Skateshop.create(name: "Snowbeach", address: "30 Bd Richard-Lenoir, 75011 Paris", url: "https://www.snowbeach.com")
 skateshop2.save!
 
 
