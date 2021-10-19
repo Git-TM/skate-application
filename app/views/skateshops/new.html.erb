@@ -1,0 +1,18 @@
+<div class="container pt-4">
+  <%= simple_form_for @skateshop do |f| %>
+  <%= f.input :name %>
+  <%= f.input :address%>
+  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+  <%= f.submit "Submit Skateshop", class: "btn btn-dark" %>
+  <% end %>
+</div>
+<div class="footer">
+  <div class="footer-links">
+    <a href="https://github.com/Git-TM"><i class="fab fa-github"></i></a>
+    <a href="https://www.malt.fr/profile/tristanmonteiro"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.linkedin.com/in/tristan-monteiro/"><i class="fab fa-linkedin"></i></a>
+  </div>
+  <div class="footer-copyright">
+    <p>Made with <i class="fas fa-heart"></i> in Paris by lilorphi & Soonam</p>
+  </div>
+</div>

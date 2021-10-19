@@ -13,4 +13,20 @@ class SkateshopsController < ApplicationController
       }
     end
   end
+
+  def new
+    @skateshop = Skateshop.new
+  end
+
+  def create
+    @skateshop = Skateshop.new(skateshop_params)
+    @skateshop.save
+    redirect_to skateshops_path
+  end
+
+  private
+
+  def skateshop_params
+    params.require(:skateshop).permit(:name, :address, :photo)
+  end
 end
