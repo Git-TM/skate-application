@@ -31,8 +31,8 @@
     </div>
     <div class="spot-description">
       <h2><%= @spot.name %></h2>
-      <p> Flat Score : <%= @spot.score_flat%>/ 5</p>
-      <p> Popularity Score : <%= @spot.score_popularity%>/ 5</p>
+      <p> Flat Score : <%= @spot.score_flat%> / 5</p>
+      <p> Popularity Score : <%= @spot.score_popularity%> / 5</p>
     </div>
   </div>
 </div>
@@ -40,14 +40,14 @@
 <div class="container">
   <div class="videotricks-container">
   <h2>All the tricks made at <%= @spot.name %></h2>
-    <% @videotricks.each do |videotrick| %>
+    <% @allvideotricks.each do |videotrick| %>
       <%= videotrick.content %>
       <%= cl_video_tag (videotrick.video.key), id: "videotricks", width: "200px", height: "200px", controls: false, autoplay:true, loop:true, muted:true %>
     <% end %>
   </div>
-  <%= simple_form_for([@spot, @newvideotrick]) do |f| %>
-    <%= f.input :content, as: :text %>
-    <%= f.input :video, as: :file, input_html: { data: { direct_upload_url: '/rails/active_storage/direct_uploads' } } %>
+  <%= simple_form_for([@spot, @videotrick], remote: true) do |f| %>
+    <%= f.input :content %>
+    <%= f.input :video, as: :file %>
     <%= f.button :submit %>
   <% end %>
 </div>

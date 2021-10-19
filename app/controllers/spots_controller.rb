@@ -17,15 +17,19 @@ class SpotsController < ApplicationController
 
   def show
     @spot = Spot.find(params[:id])
-    @videotricks = Videotrick.where(spot_id: params[:id])
-    @newvideotrick = Videotrick.new
+    @videotrick = Videotrick.new
+    @allvideotricks = Videotrick.where(spot_id: params[:id])
   end
 
-  # def create
-  #   @spot = Videotrick.new(params[:videotrick])
-  #   @videotrick.save
-  #   # Will raise ActiveModel::ForbiddenAttributesError
-  # end
+  def new
+    @spot = Spot.new
+  end
+
+  def create
+    @spot = Spot.new(spot_params)
+    @spot.save
+    redirect_to spots_path
+  end
 
   #   def create
   #   # @videotrick = Videotrick.new(params[:videotrick_id])
@@ -40,17 +44,6 @@ class SpotsController < ApplicationController
   #     render 'spots/show'
   #   end
   # end
-
-  def new
-    @spot = Spot.new
-  end
-
-  def create
-    @spot = Spot.new(spot_params)
-    @spot.save
-
-    redirect_to spots_path
-  end
 
   private
 
