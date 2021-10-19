@@ -4,8 +4,12 @@
   align-items: center;
 }
 
-.photo-spots-container{
-  width: 65%;
+.spot-photo-show {
+  max-width: 800px;
+}
+
+.photo-spots-container {
+  width: 100%;
   margin: 10px 20px;
 }
 
@@ -13,12 +17,28 @@
   text-align: center;
 }
 
-.photo-spot{
-  border-radius: 30px;
+.photo-spot {
+  border-radius: 10px;
 }
 
-.spot-description{
-  width: 20%;
+.spot-description {
+  width: 100%;
+  padding-left: 20px;
+  align-items: baseline;
+  display: flex;
+}
+
+.spot-title {
+  padding-right: 15px;
+}
+
+.spot-address {
+  padding-right: 20px;
+}
+
+.container-top {
+  padding: 0 25%;
+  align-items: left;
 }
 
 .videotricks-container{
