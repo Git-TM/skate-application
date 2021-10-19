@@ -1,16 +1,16 @@
-<div class="container">
-  <div class="spot-presentation">
-    <div class="photo-spots-container">
+<div class="container-top">
+  <div class="spot-presentation row">
+    <div class="spot-description row pt-4">
+      <h2 class="spot-title"><%= @spot.name %></h2>
+      <p class="spot-address"><%= @spot.address %> </p>
+      <p><%= @spot.score_flat %> </p>
+    </div>
+    <div class="photo-spots-container spot-photo-show">
       <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-        <%# <ol class="carousel-indicators">
-          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-        </ol> %>
         <div class="carousel-inner">
           <% if @spot.photos.attached? %>
             <div class="carousel-item active">
-              <%= image_tag(@spot.photos.first, class: "photo-spot d-block w-100") %>
+              <%= image_tag(@spot.photos.first,  class: "photo-spot d-block w-100") %>
             </div>
             <% @spot.photos.all[1..-1].each do |illustration| %>
               <div class="carousel-item">
@@ -29,14 +29,8 @@
         </a>
       </div>
     </div>
-    <div class="spot-description">
-      <h2><%= @spot.name %></h2>
-      <p> Flat Score : <%= @spot.score_flat%> / 5</p>
-      <p> Popularity Score : <%= @spot.score_popularity%> / 5</p>
-    </div>
   </div>
 </div>
-
 <div class="container">
   <div class="videotricks-container">
   <h2>All the tricks made at <%= @spot.name %></h2>

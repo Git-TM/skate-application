@@ -1,5 +1,5 @@
-<%= link_to spots_path(spot_id: spot.id), class: "bouton-home" do %>
-  <div>
+<%= link_to spot_path(spot.id), class: 'info-links' do %>
+  <div class='info-div'>
     <h4><%= spot.name %></h4>
     <p><%= spot.address %> </p>
     <% if spot.photos.attached? %>

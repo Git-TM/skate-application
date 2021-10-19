@@ -1,6 +1,12 @@
-<%= link_to skateshops_path(skateshop_id: skateshop.id), class: "bouton-home"  do %>
-  <div>
-    <h2><%= skateshop.name %></h2>
-    <p><%= skateshop.address %></p>
+<%= link_to skateshops_path(skateshop.id), class: 'info-links' do %>
+  <div class='info-div'>
+    <h4><%= skateshop.name %></h4>
+    <p><%= skateshop.address %> </p>
+    <%= link_to "View Site", skateshop.url , class: "btn btn-shop-url", target: :_blank %>
+    <% if skateshop.photos.attached? %>
+      <% skateshop.photos.each do |illustration| %>
+          <%= image_tag(illustration, class: 'photo-info') %>
+      <% end %>
+     <% end %>
   </div>
 <% end %>
