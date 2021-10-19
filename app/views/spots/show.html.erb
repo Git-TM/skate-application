@@ -2,11 +2,11 @@
   <div class="spot-presentation">
     <div class="photo-spots-container">
       <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-        <ol class="carousel-indicators">
+        <%# <ol class="carousel-indicators">
           <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
           <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
           <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-        </ol>
+        </ol> %>
         <div class="carousel-inner">
           <% if @spot.photos.attached? %>
             <div class="carousel-item active">
@@ -45,9 +45,5 @@
       <%= cl_video_tag (videotrick.video.key), id: "videotricks", width: "200px", height: "200px", controls: false, autoplay:true, loop:true, muted:true %>
     <% end %>
   </div>
-  <%= simple_form_for([@spot, @videotrick], remote: true) do |f| %>
-    <%= f.input :content %>
-    <%= f.input :video, as: :file %>
-    <%= f.button :submit %>
-  <% end %>
+  <%= render "videotricks/form" %>
 </div>
