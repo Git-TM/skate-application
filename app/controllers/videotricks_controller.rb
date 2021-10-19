@@ -4,13 +4,19 @@ class VideotricksController < ApplicationController
     # render :mp4, include: [:image, :video]
   end
 
-  def new
-    @videotrick = Videotrick.new # needed to instantiate the form_for
-  end
+  # def new
+  #   @videotrick = Videotrick.new # needed to instantiate the form_for
+  # end
 
   def create
-    @videotrick = Videotrick.new(params[:videotrick])
-    @videotrick.save
+    @spot = Spot.find(params[:spot_id])
+    @videotrick = Videotrick.new(videotrick_params)
+    @videotrick.spot = @spot
+    if @videotrick.save
+      redirect_to spot_path(@spot)
+    else
+      render 'spots/show'
+    end
   end
 
   private
