@@ -1,4 +1,4 @@
-span{
+.spanny{
   position: relative;
   display: inline-flex;
   width: 180px;
@@ -6,7 +6,8 @@ span{
   margin: 0 15px;
   perspective: 1000px;
 }
-span .spot-btn-home{
+
+.spanny .spot-btn-home{
   font-size: 19px;
   letter-spacing: 1px;
   transform-style: preserve-3d;
@@ -15,8 +16,8 @@ span .spot-btn-home{
   font-family: 'Montserrat', sans-serif;
 
 }
-span .spot-btn-home:before,
-span .spot-btn-home:after{
+.spanny .spot-btn-home:before,
+.spanny .spot-btn-home:after{
   position: absolute;
   content: "Spots";
   height: 55px;
@@ -28,20 +29,20 @@ span .spot-btn-home:after{
   box-sizing: border-box;
   border-radius: 5px;
 }
-span .spot-btn-home:before{
+.spanny .spot-btn-home:before{
   color: #fff;
   background: #000;
   transform: rotateY(0deg) translateZ(25px);
 }
-span .spot-btn-home:after{
+.spanny .spot-btn-home:after{
   color: #000;
   transform: rotateX(90deg) translateZ(25px);
 }
-span .spot-btn-home:hover{
+.spanny .spot-btn-home:hover{
   transform: translateZ(-25px) rotateX(-90deg);
 }
 
-span .shop-btn-home{
+.spanny .shop-btn-home{
   font-size: 19px;
   letter-spacing: 1px;
   transform-style: preserve-3d;
@@ -50,8 +51,8 @@ span .shop-btn-home{
   font-family: 'Montserrat', sans-serif;
 
 }
-span .shop-btn-home:before,
-span .shop-btn-home:after{
+.spanny .shop-btn-home:before,
+.spanny .shop-btn-home:after{
   position: absolute;
   content: "Skateshops";
   height: 55px;
@@ -63,15 +64,15 @@ span .shop-btn-home:after{
   box-sizing: border-box;
   border-radius: 5px;
 }
-span .shop-btn-home:before{
+.spanny .shop-btn-home:before{
   color: #fff;
   background: #000;
   transform: rotateY(0deg) translateZ(25px);
 }
-span .shop-btn-home:after{
+.spanny .shop-btn-home:after{
   color: #000;
   transform: rotateX(90deg) translateZ(25px);
 }
-span .shop-btn-home:hover{
+.spanny .shop-btn-home:hover{
   transform: translateZ(-25px) rotateX(-90deg);
 }
