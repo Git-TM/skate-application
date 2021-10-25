@@ -26,14 +26,13 @@ class SpotsController < ApplicationController
   end
 
   def create
-    @spot = Spot.new(spot_params)
-    @spot.save
+    @spot = Spot.create!(spot_params)
     redirect_to spots_path
   end
 
   private
 
   def spot_params
-    params.require(:spot).permit(:name, :address, :photos)
+    params.require(:spot).permit(:name, :address, photos: [])
   end
 end
