@@ -18,6 +18,18 @@
 }
 
 .photo-spot {
+  object-fit: cover;
+  height: 350px;
+  border-radius: 10px;
+}
+
+.lower-photo {
+  padding-top: 16px;
+}
+
+.photo-spot-later {
+  object-fit: cover;
+  height: 167px;
   border-radius: 10px;
 }
 
