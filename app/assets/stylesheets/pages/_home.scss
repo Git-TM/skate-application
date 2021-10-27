@@ -1,41 +1,124 @@
+.green {
+  color:$green;
+}
+
+.container{
+  padding: 40px 0px;
+}
+
+// banner CSS
+#banner{
+  background-color: $green;
+  height: 600px;
+  width: 100%;
+}
+
+.banner-content{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 160px 0;
+}
+
+.banner-content-text{
+  width: 40%;
+  color: white;
+  text-align:center;
+}
+
+.banner-content-image{
+  width: 40%;
+}
+
+// Home content CSS
+.home-bloc-title{
+  text-align:center;
+}
+
+.home-bloc{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 70px 0px;
+}
+
+.home-bloc-text{
+  width: 40%;
+  text-align:center;
+}
+
+.home-bloc-image{
+  width: 35%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // Specific CSS for your home-page
-.container-home {
-  margin: 0px;
-  height: calc(100vh - 166px);
-}
+// .container-home {
+//   margin: 0px;
+//   height: calc(100vh - 166px);
+// }
 
-video {
-  margin: 0px 0px;
-  object-fit: cover;
-  filter: black;
-  -webkit-filter: grayscale(.3);
-}
+// video {
+//   margin: 0px 0px;
+//   object-fit: cover;
+//   filter: black;
+//   -webkit-filter: grayscale(.3);
+// }
 
 
-.container-home { position:relative; }
-.container-home video {
-    position:relative;
-    z-index:0;
-}
-video{
-  opacity: .7;
-}
-.overlay {
-  position:absolute;
-  top:30vh;
-  left:20%;
-  z-index:1;
-  width: 50%;
-  padding: 30px 0px;
-  text-align:center;
-  background-color:white;
-  opacity:.6;
-  border-radius: 20px;
-}
+// .container-home { position:relative; }
+// .container-home video {
+//     position:relative;
+//     z-index:0;
+// }
+// video{
+//   opacity: .7;
+// }
+// .overlay {
+//   position:absolute;
+//   top:30vh;
+//   left:20%;
+//   z-index:1;
+//   width: 50%;
+//   padding: 30px 0px;
+//   text-align:center;
+//   background-color:white;
+//   opacity:.6;
+//   border-radius: 20px;
+// }
 
-.title-banner{
-  padding-bottom: 50px;
-  color: black;
-  font-size: 45px;
-  text-align:center;
-}
+// .title-banner{
+//   padding-bottom: 50px;
+//   color: black;
+//   font-size: 45px;
+//   text-align:center;
+// }

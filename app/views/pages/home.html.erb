@@ -1,14 +1,49 @@
-<div class="container-home">
-  <%# <video id="video" width="100%" height="100%" autoplay muted loop> %>
-    <%# <source src=<%= image_path("video.mp4")%> type=video/mp4> %>
-    <%# <source src="" type=video/mp4> %>
-  <%# </video> %>
-  <div class="overlay">
-    <h2 class ="title-banner">Trouvez le spot Parisien qui vous fera vibrer</h2>
-    <span class="spanny"><%= link_to "", spots_path, class: "spot-btn-home" %></span>
-    <span class="spanny"><%= link_to "", skateshops_path, class: "shop-btn-home" %></span>
+<div id="banner">
+  <div class="banner-content">
+    <div class="banner-content-text">
+      <h2>Find the best in-class skatespots in Paris</h2>
+      <p>Post easily videos of your tricks among parisian skaters </p>
+    </div>
+    <%= image_tag("skateboard-banner.svg", class:"banner-content-image") %>
   </div>
 </div>
+<div class="container">
+  <div class="home-bloc-title">
+    <h2 class="green">The perfect app for the Parisian skate community </h2>
+    <p>Find your future favorite skate spots (or Skateshop!), post your tricks and let the magic happen </p>
+  </div>
+  <div class="home-bloc">
+    <div class="home-bloc-text">
+    <h3 class="green">Find all the spots informations you want in Paris</h3>
+    <p>Check the maps of spots in paris and find THE spot that suits your sesh. Check photos, flatground score, popularity score</p>
+    <span class="spanny spots-button-content"><%= link_to "", spots_path, class: "btn-home mt-2" %></span>
+    </div>
+    <%= image_tag("map.svg", class:"home-bloc-image") %>
+  </div>
+
+  <div class="home-bloc">
+    <%= image_tag("video-home.svg", class:"home-bloc-image") %>
+    <div class="home-bloc-text">
+      <h3 class="green">Want some tricks inspiration on the spot you skated ? </h3>
+      <p>Check all the tricks done at Palais de tokyo, Trocadero.  </p>
+      <span class="spanny video-button-content"><%= link_to "", spots_path, class: "btn-home mt-2" %></span>
+    </div>
+  </div>
+
+  <div class="home-bloc">
+    <div class="home-bloc-text">
+      <h3 class="green">You broke your bearings or your board while skating ? </h3>
+      <p>Check the maps of skateshop to find the closest skateshop to get quickly on your new set-up again !</p>
+      <span class="spanny skateshop-button-content"><%= link_to "", skateshops_path, class: "btn-home mt-2" %></span>
+    </div>
+    <%= image_tag("shop-home.svg", class:"home-bloc-image") %>
+  </div>
+</div>
+
+
+
+
+
 <div class="footer">
   <div class="footer-links">
     <a href="https://github.com/Git-TM"><i class="fab fa-github"></i></a>

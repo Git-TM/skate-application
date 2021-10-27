@@ -1,3 +1,4 @@
+// Button With the JS effect
 .spanny{
   position: relative;
   display: inline-flex;
@@ -7,7 +8,7 @@
   perspective: 1000px;
 }
 
-.spanny .spot-btn-home{
+.spanny .btn-home{
   font-size: 19px;
   letter-spacing: 1px;
   transform-style: preserve-3d;
@@ -16,63 +17,57 @@
   font-family: 'Montserrat', sans-serif;
 
 }
-.spanny .spot-btn-home:before,
-.spanny .spot-btn-home:after{
+.spanny .btn-home:before,
+.spanny .btn-home:after{
   position: absolute;
-  content: "Spots";
   height: 55px;
   width: 180px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 5px solid black;
+  border: 5px solid $orange;
   box-sizing: border-box;
   border-radius: 5px;
 }
-.spanny .spot-btn-home:before{
+.spanny .btn-home:before{
   color: #fff;
-  background: #000;
+  background: $orange;
   transform: rotateY(0deg) translateZ(25px);
 }
-.spanny .spot-btn-home:after{
-  color: #000;
+.spanny .btn-home:after{
+  color: #fff;
   transform: rotateX(90deg) translateZ(25px);
 }
-.spanny .spot-btn-home:hover{
+.spanny .btn-home:hover{
   transform: translateZ(-25px) rotateX(-90deg);
 }
 
-.spanny .shop-btn-home{
-  font-size: 19px;
-  letter-spacing: 1px;
-  transform-style: preserve-3d;
-  transform: translateZ(-25px);
-  transition: transform .25s;
-  font-family: 'Montserrat', sans-serif;
+// All new content buttons
+  // Homepage
+.skateshop-button-content .btn-home:before,
+.skateshop-button-content .btn-home:after{
+  content: "Find skateshops";
+}
+.skateshop-button-content .btn-home:after{
+  color:black;
+}
 
+.spots-button-content .btn-home:before,
+.spots-button-content .btn-home:after{
+  content: "Find your spot";
 }
-.spanny .shop-btn-home:before,
-.spanny .shop-btn-home:after{
-  position: absolute;
-  content: "Skateshops";
-  height: 55px;
-  width: 180px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 5px solid black;
-  box-sizing: border-box;
-  border-radius: 5px;
+
+.spots-button-content .btn-home:after{
+  color:black;
 }
-.spanny .shop-btn-home:before{
-  color: #fff;
-  background: #000;
-  transform: rotateY(0deg) translateZ(25px);
+
+.video-button-content .btn-home:before,
+.video-button-content .btn-home:after{
+  content: "Post your video";
 }
-.spanny .shop-btn-home:after{
-  color: #000;
-  transform: rotateX(90deg) translateZ(25px);
+
+.video-button-content .btn-home:after{
+  color:black;
 }
-.spanny .shop-btn-home:hover{
-  transform: translateZ(-25px) rotateX(-90deg);
-}
+
+  // Other
