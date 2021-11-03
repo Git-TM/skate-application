@@ -30,6 +30,10 @@ class SpotsController < ApplicationController
     redirect_to spots_path
   end
 
+  def personal
+    @videotricks = Videotrick.where(user_id: current_user.id)
+  end
+
   private
 
   def spot_params
