@@ -34,12 +34,35 @@
   </div>
 </div>
 <div class="container">
-  <div class="videotricks-container">
-  <h2>All the tricks made at <%= @spot.name %></h2>
-    <% @allvideotricks.each do |videotrick| %>
-      <%= videotrick.content %>
-      <%= cl_video_tag (videotrick.video.key), id: "videotricks", width: "200px", height: "200px", controls: false, autoplay:true, loop:true, muted:true %>
-    <% end %>
+  <div class="title-video-show">
+    <h2>All the tricks made at <%= @spot.name %></h2>
+    <%= link_to 'Add trick', new_spot_videotrick_path(@spot.id),  {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window', class: 'btn btn-ghost'}  %>
+      <%= render "videotricks/form" %>
   </div>
+
+
+  <div class="cards-videotricks">
+    <% @allvideotricks.each do |videotrick| %>
+
+    <div class="card-videotrick">
+      <div class="videotrick-video">
+        <%= cl_video_tag (videotrick.video.key), id: "videotricks", controls: true, autoplay:false, muted:true %>
+      </div>
+      <div class="videotrick-content">
+        <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar" %>
+        <div class="videotrick-desc">
+          <%= videotrick.content %>
+        </div>
+      </div>
+    </div>
+
+
+    <% end %>
+
+  </div>
+
+
+
+
   <%= render "videotricks/form" %>
 </div>

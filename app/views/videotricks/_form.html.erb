@@ -1,8 +1,15 @@
-  <%= simple_form_for([@spot, @videotrick]) do |f| %>
 
-    <%= f.input :content %>
-    <%= f.file_field :video, accept: "video/*" %>
-    <%# , direct_upload: true %>
-    <%# <%= f.button :submit %>
-    <%= f.submit 'Upload'%>
-  <% end %>
+<div id="modal-window" class="modal" role="dialog" aria-labelledby="form" aria-hidden="true">
+  <div class="modal-dialog form-test" role="document">
+    <div class="modal-content">
+      <div class="form-container-spot-show">
+        <h3>Add your tricks</h3>
+        <%= simple_form_for([@spot, @videotrick]) do |f| %>
+          <%= f.file_field :video, accept: "video/*" %>
+          <%= f.input :content %>
+          <%= f.submit 'Upload'%>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

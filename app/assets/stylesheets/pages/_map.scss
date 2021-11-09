@@ -30,19 +30,6 @@
   outline: none !important;
 }
 
-.btn-ghost {
-  position: absolute;
-  top: 40px;
-  right: 40px;
-  z-index: 3;
-  color: white;
-  padding: 8px 24px;
-  border-radius: 50px;
-  font-weight: lighter;
-  background-color: black;
-  opacity: 0.8;
-  transition: opacity 0.3s ease;
-}
 
 .btn-shop-url {
   position: absolute;
@@ -58,10 +45,6 @@
   transition: opacity 0.3s ease;
 }
 
-.btn-ghost:hover {
-  opacity: 1;
-  color: white;
-}
 
 .btn-shop-url:hover {
   opacity: 1;
