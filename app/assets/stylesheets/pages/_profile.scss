@@ -1,0 +1,31 @@
+.main-div {
+  display: flex;
+}
+
+.left-div {
+  width: 20%;
+}
+
+.right-div {
+  width: 80%;
+}
+
+.form-edit {
+  width: 450px;
+}
+
+.button-edit {
+  color: #4A4A4A;
+  border: 1px solid #4A4A4A;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+  width: 80px;
+  height: 40px;
+  transition: opacity 0.3s ease;
+}
+
+.button-edit:hover {
+  opacity: 1;
+}
