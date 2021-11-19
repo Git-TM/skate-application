@@ -1,0 +1,17 @@
+<h1 class="text-center"> My tricks</h1>
+
+<div class="cards-videotricks">
+  <% Videotrick.where(user: current_user).each do |videotrick| %>
+    <div class="card-videotrick">
+      <div class="videotrick-video">
+        <%= cl_video_tag (videotrick.video.key), id: "videotricks", controls: true, autoplay:false, muted:true %>
+      </div>
+      <div class="videotrick-content">
+        <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar" %>
+        <div class="videotrick-desc">
+          <%= videotrick.content %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

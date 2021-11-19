@@ -1,0 +1,15 @@
+
+<div class="dashboard-container">
+  <div class="tab-container">
+    <%= link_to 'My profile', dashboard_path(tab: "myprofile"), class:"tab-container-link" %>
+    <%= link_to 'My tricks', dashboard_path(tab: "mytricks"), class:"tab-container-link" %>
+  </div>
+  <div class="dashboard-content">
+    <% if params[:tab] == "myprofile" || params[:tab].nil?  %>
+      <%= render "dashboard_my_profile" %>
+    <% end %>
+    <% if params[:tab] == "mytricks"  %>
+      <%= render "dashboard_my_tricks" %>
+    <% end %>
+  </div>
+</div>

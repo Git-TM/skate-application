@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   end
   resources :skateshops, only: [:index, :new, :show, :create]
   # resources :videotricks, only: :new
+  get 'dashboard', to: 'pages#dashboard'
 end

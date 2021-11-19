@@ -71,7 +71,10 @@
 
 .cards-videotricks{
   padding: 50px 0px;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 16px;
+  grid-row-gap: 16px;
 }
 
 .card-videotrick{
@@ -109,4 +112,9 @@
   padding: 100px;
   background-color: $green;
   color: white;
+}
+
+.spot-desc-score {
+  display: flex;
+  justify-content: space-between;
 }

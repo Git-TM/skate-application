@@ -5,8 +5,9 @@
     </div>
   </div>
   <div class="row pt-2">
-    <div class="col">
+    <div class="col spot-desc-score">
       <p class="spot-address"><%= @spot.address %> | Flat Score: <%= @spot.score_flat %> | Popularity Score: <%= @spot.score_popularity %></p>
+      <%= link_to 'Back to spots', spots_path, class:"green-link" %>
     </div>
   </div>
   <div class="row pt-2">
