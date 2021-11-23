@@ -8,12 +8,11 @@ class VideotricksController < ApplicationController
     @videotrick = Videotrick.new(videotrick_params)
     @videotrick.spot_id = @spot.id
     @videotrick.user_id = current_user.id
-    @videotrick.save
-    # if @videotrick.save
-    #   redirect_to spots_path
-    # else
-    #   redirect_to spot_path(@spot)
-    # end
+    if @videotrick.save
+      redirect_to spot_path(@spot), notice: "Video uploaded successfully"
+    else
+      redirect_to videotrick_new_path(@spot)
+    end
   end
 
   private

@@ -1,3 +1,4 @@
+// Top part with the photo of the spot
 .spot-presentation {
   display:flex;
   justify-content:space-evenly;
@@ -33,33 +34,12 @@
   border-radius: 10px;
 }
 
-// .spot-description {
-//   width: 100%;
-//   padding-left: 20px;
-//   align-items: baseline;
-//   display: flex;
-// }
-
 .spot-title {
   padding-right: 15px;
 }
 
 .spot-address {
   padding-right: 20px;
-}
-
-// .container-top {
-//   padding: 0 25%;
-//   align-items: left;
-// }
-
-.videotricks-container{
-  padding: 50px 0px;
-}
-
-#videotricks{
-  width: 400px;
-  height: 100%;
 }
 
 .btn-add-photo {
@@ -85,4 +65,56 @@
 
 .plus-icon {
   padding-top: 30px;
+}
+// Top part with the videotricks CSS
+
+
+.cards-videotricks{
+  padding: 50px 0px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 16px;
+  grid-row-gap: 16px;
+}
+
+.card-videotrick{
+  background-color: $green;
+  width: 302px;
+  padding: 1px;
+  margin: 0 20px 0;
+  // border-bottom-right-radius: 10px;
+  // border-bottom-left-radius: 10px;
+  border-radius: 10px;
+}
+
+#videotricks{
+  width: 300px;
+  height: 500px;
+  object-fit: cover;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.videotrick-content{
+  display: flex;
+  align-items: center;
+  padding: 5px 10px;
+}
+
+.videotrick-desc{
+  color: white;
+  font-size: 12px;
+  padding-left: 10px;
+}
+
+.form-container-spot-show{
+  border-radius: 20px;
+  padding: 100px;
+  background-color: $green;
+  color: white;
+}
+
+.spot-desc-score {
+  display: flex;
+  justify-content: space-between;
 }
