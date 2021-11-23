@@ -1,73 +1,72 @@
 // Button With the JS effect
-.spanny{
-  position: relative;
-  display: inline-flex;
-  width: 180px;
-  height: 55px;
-  margin: 0 15px;
-  perspective: 1000px;
+.spanny {
+	position: relative;
+	display: inline-flex;
+	width: 180px;
+	height: 55px;
+	margin: 0 15px;
+	perspective: 1000px;
 }
 
-.spanny .btn-home{
-  font-size: 19px;
-  letter-spacing: 1px;
-  transform-style: preserve-3d;
-  transform: translateZ(-25px);
-  transition: transform .25s;
-  font-family: 'Montserrat', sans-serif;
-
+.spanny .btn-home {
+	font-size: 19px;
+	letter-spacing: 1px;
+	transform-style: preserve-3d;
+	transform: translateZ(-25px);
+	transition: transform 0.25s;
+	font-family: 'Montserrat', sans-serif;
 }
 .spanny .btn-home:before,
-.spanny .btn-home:after{
-  position: absolute;
-  height: 55px;
-  width: 180px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 5px solid $orange;
-  box-sizing: border-box;
-  border-radius: 5px;
+.spanny .btn-home:after {
+	position: absolute;
+	height: 55px;
+	width: 180px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: 5px solid $orange;
+	box-sizing: border-box;
+	border-radius: 5px;
 }
-.spanny .btn-home:before{
-  color: #fff;
-  background: $orange;
-  transform: rotateY(0deg) translateZ(25px);
+.spanny .btn-home:before {
+	color: #fff;
+	background: $orange;
+	transform: rotateY(0deg) translateZ(25px);
 }
-.spanny .btn-home:after{
-  color: #fff;
-  transform: rotateX(90deg) translateZ(25px);
+.spanny .btn-home:after {
+	color: #fff;
+	transform: rotateX(90deg) translateZ(25px);
 }
-.spanny .btn-home:hover{
-  transform: translateZ(-25px) rotateX(-90deg);
+.spanny .btn-home:hover {
+	transform: translateZ(-25px) rotateX(-90deg);
 }
 
 // All new content buttons
-  // Homepage
+// Homepage
 .skateshop-button-content .btn-home:before,
-.skateshop-button-content .btn-home:after{
-  content: "Find skateshops";
+.skateshop-button-content .btn-home:after {
+	content: 'Find skateshops';
 }
-.skateshop-button-content .btn-home:after{
-  color:black;
+.skateshop-button-content .btn-home:after {
+	color: $orange;
 }
 
 .spots-button-content .btn-home:before,
-.spots-button-content .btn-home:after{
-  content: "Find your spot";
+.spots-button-content .btn-home:after {
+	content: 'Find your spot';
 }
 
-.spots-button-content .btn-home:after{
-  color:black;
+.spots-button-content .btn-home:after {
+	color: $orange;
 }
 
 .video-button-content .btn-home:before,
-.video-button-content .btn-home:after{
-  content: "Post your video";
+.video-button-content .btn-home:after {
+	content: 'Post your video';
 }
 
-.video-button-content .btn-home:after{
-  color:black;
+.video-button-content .btn-home:after {
+	color: $orange;
 }
 
-  // Other
+// Other

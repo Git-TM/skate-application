@@ -1,56 +1,56 @@
 .green {
-  color:$green;
+	color: $green;
 }
 
-.container{
-  padding: 40px 0px;
+.container {
+	padding: 40px 0px;
 }
 
 // banner CSS
-#banner{
-  background-color: $green;
-  height: 600px;
-  width: 100%;
+#banner {
+	background-color: $green;
+	height: 100vh;
+	width: 100%;
 }
 
-.banner-content{
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  padding: 160px 0;
+.banner-content {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	padding: 160px 0;
 }
 
-.banner-content-text{
-  width: 40%;
-  color: white;
-  text-align:center;
+.banner-content-text {
+	width: 40%;
+	color: white;
+	text-align: center;
 }
 
-.banner-content-image{
-  width: 40%;
+.banner-content-image {
+	width: 40%;
 }
 
 // Home content CSS
-.home-bloc-title{
-  text-align:center;
+.home-bloc-title {
+	text-align: center;
 }
 
-.home-bloc{
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  padding: 70px 0px;
+.home-bloc {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	padding: 70px 0px;
 }
 
-.home-bloc-text{
-  width: 40%;
-  text-align:center;
+.home-bloc-text {
+	width: 40%;
+	text-align: center;
 }
 
-.home-bloc-image{
-  width: 35%;
+.home-bloc-image {
+	width: 35%;
 }
 
 .content-wrapper {
-  min-height: calc(100vh - 70px - 80px);
+	min-height: calc(100vh - 70px - 80px);
 }
