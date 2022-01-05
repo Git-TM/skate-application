@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_23_173203) do
+ActiveRecord::Schema.define(version: 2022_01_05_091944) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,6 +58,14 @@ ActiveRecord::Schema.define(version: 2021_11_23_173203) do
     t.string "url"
   end
 
+  create_table "spotphotos", force: :cascade do |t|
+    t.text "description"
+    t.bigint "spot_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["spot_id"], name: "index_spotphotos_on_spot_id"
+  end
+
   create_table "spots", force: :cascade do |t|
     t.string "address"
     t.integer "score_flat"
@@ -93,6 +101,7 @@ ActiveRecord::Schema.define(version: 2021_11_23_173203) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "spotphotos", "spots"
   add_foreign_key "videotricks", "spots"
   add_foreign_key "videotricks", "users"
 end

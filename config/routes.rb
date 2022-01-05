@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get "/my-tricks", to: "spots#personal"
   resources :spots, only: [:index, :new, :show, :create] do
     resources :videotricks, only: [:new, :create]
+    resources :spotphotos, only: [:new, :create]
   end
   resources :skateshops, only: [:index, :new, :show, :create]
   # resources :videotricks, only: :new
