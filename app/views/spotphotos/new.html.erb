@@ -1,0 +1,7 @@
+<div class="container pt-4">
+  <%= simple_form_for [@spot, @spotphoto] do |f| %>
+    <%= f.input :description %>
+    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+    <%= f.submit "Submit review", class: "btn btn-primary" %>
+  <% end %>
+</div>

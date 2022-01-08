@@ -25,7 +25,8 @@
         </div>
       <% else %>
         <div class="row lower-photo with-add-button">
-          <%= link_to "#", class: "photo-spot-later btn-add-photo d-block w-100" do %>
+          <%# <%= link_to "#", class: "photo-spot-later btn-add-photo d-block w-100" do %>
+          <%= link_to new_spot_spotphoto_path(@spot), class: "photo-spot-later btn-add-photo d-block w-100" do %>
             <i class="fas fa-plus plus-icon fa-5x"></i>
           <% end %>
         </div>
@@ -66,4 +67,13 @@
 
 
   <%= render "videotricks/form" %>
+  <div>
+  <% if @spot.spotphotos.blank? %>
+    Be the first to leave a review for <%= @spot.name %>
+  <% else %>
+    <% @spot.spotphotos.each do |spotphoto| %>
+    <h1><%= spotphoto %></h1>
+    <% end %>
+  <% end %>
+  </div>
 </div>
