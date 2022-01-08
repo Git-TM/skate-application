@@ -16,6 +16,6 @@ class SpotphotosController < ApplicationController
   private
 
   def spotphoto_params
-    params.require(:spotphoto).permit(:description, photos: [])
+    params.require(:spotphoto).permit(:description, :photo)
   end
 end

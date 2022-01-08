@@ -72,7 +72,10 @@
     Be the first to leave a review for <%= @spot.name %>
   <% else %>
     <% @spot.spotphotos.each do |spotphoto| %>
-    <h1><%= spotphoto %></h1>
+    <p><%= spotphoto.description %></p>
+        <% if spotphoto.photo.attached? %>
+        <%= cl_image_tag spotphoto.photo.key, height: 200, width: 100, crop: :fill %>
+        <% end %>
     <% end %>
   <% end %>
   </div>
