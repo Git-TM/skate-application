@@ -68,10 +68,10 @@
 
   <%= render "videotricks/form" %>
   <div>
-  <% if @spot.spotphotos.blank? %>
+  <% if @spotphotos.blank? %>
     Be the first to leave a review for <%= @spot.name %>
   <% else %>
-    <% @spot.spotphotos.each do |spotphoto| %>
+    <% @spotphotos.each do |spotphoto| %>
     <p><%= spotphoto.description %></p>
         <% if spotphoto.photo.attached? %>
         <%= cl_image_tag spotphoto.photo.key, height: 200, width: 100, crop: :fill %>
