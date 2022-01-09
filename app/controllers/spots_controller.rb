@@ -19,6 +19,7 @@ class SpotsController < ApplicationController
     @spot = Spot.find(params[:id])
     @videotrick = Videotrick.new
     @allvideotricks = Videotrick.where(spot_id: params[:id])
+    @spotphotos = Spotphoto.where(spot_id: params[:id])
     # respond_to do |format|
     #   format.html
     #   format.js
