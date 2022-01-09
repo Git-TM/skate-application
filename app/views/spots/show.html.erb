@@ -26,10 +26,15 @@
               <div class="row">
                 <%= cl_image_tag spotphoto.photo.key, class: "photo-spot-later d-block w-100" %>
               </div>
-              <div class="row lower-photo with-add-button">
-            <%# <%= link_to "#", class: "photo-spot-later btn-add-photo d-block w-100" do %>
-              <%= link_to new_spot_spotphoto_path(@spot), class: "photo-spot-later btn-add-photo d-block w-100" do %>
-                <i class="fas fa-plus plus-icon fa-5x"></i>
+              <% if @spotphotos.length > 2 %>
+                <div class="row lower-photo">
+                  <%= cl_image_tag @spotphotos[2].photo.key, class: "photo-spot-later d-block w-100" %>
+                </div>
+              <% else %>
+                <div class="row lower-photo with-add-button">
+                <%= link_to new_spot_spotphoto_path(@spot), class: "photo-spot-later btn-add-photo d-block w-100" do %>
+                  <i class="fas fa-plus plus-icon fa-5x"></i>
+                <% end %>
               <% end %>
             </div>
             </div>
