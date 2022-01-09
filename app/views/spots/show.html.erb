@@ -11,27 +11,34 @@
     </div>
   </div>
 
-  <div>
-  <% if !@spotphotos %>
+  <div class="row pt-2">
+    <% if !@spotphotos %>
     Be the first to leave a photo for <%= @spot.name %>
-  <% else %>
-    <% @spotphotos.each_with_index do |spotphoto, index| %>
-      <% if spotphoto.photo.attached? %>
-        <% if index == 0 %>
-          <div class="col-7">
-            <%= cl_image_tag spotphoto.photo.key, class: "photo-spot d-block w-100" %>
-          </div>
-        <% elsif index == 1 %>
-          <div class="col-4">
-            <div class="row">
-              <%= cl_image_tag spotphoto.photo.key, class: "photo-spot-later d-block w-100" %>
+    <% else %>
+      <% @spotphotos.each_with_index do |spotphoto, index| %>
+        <% if spotphoto.photo.attached? %>
+          <% if index == 0 %>
+            <div class="col-7">
+              <%= cl_image_tag spotphoto.photo.key, class: "photo-spot d-block w-100" %>
             </div>
-          </div>
+          <% elsif index == 1 %>
+            <div class="col-4">
+              <div class="row">
+                <%= cl_image_tag spotphoto.photo.key, class: "photo-spot-later d-block w-100" %>
+              </div>
+              <div class="row lower-photo with-add-button">
+            <%# <%= link_to "#", class: "photo-spot-later btn-add-photo d-block w-100" do %>
+              <%= link_to new_spot_spotphoto_path(@spot), class: "photo-spot-later btn-add-photo d-block w-100" do %>
+                <i class="fas fa-plus plus-icon fa-5x"></i>
+              <% end %>
+            </div>
+            </div>
+          <% end %>
         <% end %>
       <% end %>
     <% end %>
-  <% end %>
   </div>
+
 
 
   <div class="row pt-2">
