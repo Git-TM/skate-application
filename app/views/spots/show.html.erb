@@ -12,7 +12,7 @@
   </div>
 
   <div class="row pt-2">
-    <% if !@spotphotos %>
+    <% if @spotphotos.empty? %>
     Be the first to leave a photo for <%= @spot.name %>
     <% else %>
       <% @spotphotos.each_with_index do |spotphoto, index| %>
@@ -43,45 +43,15 @@
       <% end %>
     <% end %>
   </div>
-
-
-
-  <div class="row pt-2">
-    <% if @spot.photos.attached? %>
-    <div class="col-7">
-      <%= image_tag(@spot.photos.first,  class: "photo-spot d-block w-100") %>
-    </div>
-    <div class="col-4">
-      <div class="row">
-        <%= image_tag(@spot.photos.all[1],  class: "photo-spot-later d-block w-100") %>
-      </div>
-      <% if @spot.photos.all[2] %>
-        <div class="row lower-photo">
-          <%= image_tag(@spot.photos.all[2],  class: "photo-spot-later d-block w-100") %>
-        </div>
-      <% else %>
-        <div class="row lower-photo with-add-button">
-          <%# <%= link_to "#", class: "photo-spot-later btn-add-photo d-block w-100" do %>
-          <%= link_to new_spot_spotphoto_path(@spot), class: "photo-spot-later btn-add-photo d-block w-100" do %>
-            <i class="fas fa-plus plus-icon fa-5x"></i>
-          <% end %>
-        </div>
-      <% end %>
-    </div>
-    <% end %>
-  </div>
 </div>
 <div class="container">
   <div class="title-video-show">
-    <h2>All the tricks made at <%= @spot.name %></h2>
+    <h2>Tricks made at <%= @spot.name %></h2>
     <%= link_to 'Add trick', new_spot_videotrick_path(@spot.id),  {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window', class: 'btn btn-ghost'}  %>
       <%= render "videotricks/form" %>
   </div>
-
-
   <div class="cards-videotricks">
     <% @allvideotricks.each do |videotrick| %>
-
     <div class="card-videotrick">
       <div class="videotrick-video">
         <%= cl_video_tag (videotrick.video.key), id: "videotricks", controls: true, autoplay:false, muted:true %>
