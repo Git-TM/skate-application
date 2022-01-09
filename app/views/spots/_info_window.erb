@@ -2,9 +2,9 @@
   <div class='info-div'>
     <h4><%= spot.name %></h4>
     <p><%= spot.address %> </p>
-    <% if spot.photos.attached? %>
-      <% spot.photos.each do |illustration| %>
-          <%= image_tag(illustration, class: 'photo-info') %>
+    <% if spot.spotphotos %>
+      <% spot.spotphotos.each do |photo| %>
+          <%= cl_image_tag photo.photo.key, class: 'photo-info' %>
       <% end %>
      <% end %>
   </div>
